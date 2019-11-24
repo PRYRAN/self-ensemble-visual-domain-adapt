@@ -525,8 +525,8 @@ def experiment(exp, arch, loss, double_softmax, confidence_thresh, rampup, teach
 
 
         log('{}Epoch {} took {:.2f}s: TRAIN clf loss={:.6f}, {}; '
-            'SRC TEST ERR={:.3%}, TGT TEST student err={:.3%}, TGT TEST teacher err={:.3%}'.format(
-            improve, epoch, t2 - t1, train_clf_loss, unsup_loss_string, src_test_err_stu, tgt_test_err_stu, tgt_test_err_tea))
+            'SVHN TEST ACCURACY={:.3%}, MNIST TEST student ACCURACY={:.3%}, MNIST TEST teacher ACCURACY={:.3%}'.format(
+            improve, epoch, t2 - t1, train_clf_loss, unsup_loss_string, 1.0 - src_test_err_stu, 1.0 - tgt_test_err_stu, 1.0 -tgt_test_err_tea))
 
     # Save network
     if model_file != '':
